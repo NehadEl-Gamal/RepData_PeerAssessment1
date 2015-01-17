@@ -1,9 +1,4 @@
----
-title: "Reproducible Research:Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research:Peer Assessment 1
 ### Introduction
 This document presents the results of peer assessments 1 of course Reproducible Research on coursera. This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. 
 The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.  
@@ -49,7 +44,7 @@ hist(daily_steps$steps,
      xlab="Total Number of Steps per day")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
 
 Report mean and median of steps
 
@@ -89,7 +84,7 @@ qplot(x=interval, y=mean, data = steps_mean,  geom = "line",
       )
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -115,6 +110,24 @@ Create a new dataset that is equal to the original dataset but with the missing 
 
 ```r
 library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+## 
+## The following objects are masked from 'package:plyr':
+## 
+##     arrange, count, desc, failwith, id, mutate, rename, summarise,
+##     summarize
+## 
+## The following object is masked from 'package:stats':
+## 
+##     filter
+## 
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
 ```
 
 
@@ -158,7 +171,7 @@ hist(steps_per_day$steps,
      xlab= "Total number of Steps per Day")
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
 
 Calculate and report the mean and median total number of steps taken per day
 
@@ -212,13 +225,14 @@ Make a panel plot containing a time series plot of the 5-minute interval (x-axis
 library("lattice")
 p <- xyplot(steps ~ interval | factor(DayType), data= steps_mean2, 
        type = 'l',
+       layout = c(1,2),
        main="",
        xlab="Interval",
        ylab="Average Number of Steps")
 print(p)
 ```
 
-![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-15-1.png) 
 
 Conclusion:  The plot indicates that the person tends to be more active during the weekend days.
 

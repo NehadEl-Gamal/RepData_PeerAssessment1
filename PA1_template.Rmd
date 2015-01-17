@@ -141,6 +141,7 @@ Make a panel plot containing a time series plot of the 5-minute interval (x-axis
 library("lattice")
 p <- xyplot(steps ~ interval | factor(DayType), data= steps_mean2, 
        type = 'l',
+       layout = c(1,2),
        main="",
        xlab="Interval",
        ylab="Average Number of Steps")
