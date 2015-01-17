@@ -79,6 +79,7 @@ steps_mean[which.max(steps_mean$mean), ]
 Calculate and report the total number of missing values in the dataset
 ```{r}
 missing_vals <- sum(is.na(data$steps))
+missing_vals
 ```
 
 Create a new dataset that is equal to the original dataset but with the missing data filled in with mean instead of the missing value
